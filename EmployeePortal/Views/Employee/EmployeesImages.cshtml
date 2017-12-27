@@ -1,0 +1,30 @@
+﻿@model IEnumerable<EmployeePortal.Models.tblEmployee>
+@{
+    @*Layout = "~/Views/Shared/Layout.cshtml";*@
+}
+@*@Ajax.ActionLink("Click for All Employee Images", "EmployeesImages", new AjaxOptions { 
+HttpMethod = "Get",
+UpdateTargetId = "tblEmployeeImages",
+InsertionMode = InsertionMode.Replace,
+LoadingElementId = "divloading",
+OnSuccess = "CountRows"
+})
+
+<div id="divloading">
+    <img src="~/Photo/Loading.gif" />
+</div>
+
+<script type="text/javascript">
+    function CountRows() {
+        alert($("#tblEmployeeImages").length + ' Rows Retrieved ');
+    }
+</script>*@
+
+
+@foreach (var item in Model)
+{
+    @Html.Partial("_EmployeeImages",item)
+}
+<p>
+    @Html.ActionLink("Back to List", "Index")
+</p>

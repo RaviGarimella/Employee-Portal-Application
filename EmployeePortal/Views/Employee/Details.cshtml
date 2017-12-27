@@ -1,0 +1,64 @@
+﻿@model EmployeePortal.Models.tblEmployee
+
+@{
+    ViewBag.Title = "Details";
+    @*Layout = "~/Views/Shared/Layout.cshtml";*@
+}
+
+<div style="font-family:Arial">
+<h2>Details</h2>
+@section Menu
+            {
+                <h3>@Html.ActionLink("Create New", "Create")</h3>
+                <h3>@Html.ActionLink("Employees by Department", "EmployeesByDepartment")</h3>
+                <h3>@Html.ActionLink("Employee Images", "EmployeesImages")</h3>
+            }
+<fieldset>
+    <legend>Employee</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Name)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Name)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Gender)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Gender)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.City)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.City)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.HireDate)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.HireDate)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.DepartmentId)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.DepartmentId)
+    </div>
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Photo)
+    </div>
+    <div class="display-field">
+        <img src="@Url.Content(@Model.Photo)" alt="@Model.AlternateText" />
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.EmployeeId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
+</div>

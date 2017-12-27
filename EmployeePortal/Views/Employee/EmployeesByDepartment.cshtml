@@ -1,0 +1,42 @@
+﻿@model IEnumerable<EmployeePortal.Models.EmployeesByDepartment>
+
+@{
+    ViewBag.Title = "Employees By Department";
+    @*Layout = "~/Views/Shared/Layout.cshtml";*@
+}
+
+
+<div style="font-family:Arial">
+<h2>Employees By Department</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table border="1">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.DepartmentName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EmployeeCount)
+        </th>
+        
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.DepartmentName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.EmployeeCount)
+        </td>
+        
+    </tr>
+}
+
+</table>
+    <p>
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+</div>
